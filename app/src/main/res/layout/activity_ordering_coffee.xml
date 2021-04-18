@@ -68,4 +68,14 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.672"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"/>
+    <TextView
+            android:text="@string/cofee_default_subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView11"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="484dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="252dp"
+            android:layout_marginRight="252dp" android:layout_marginLeft="5dp" android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/subtotalCoffee" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="228dp" app:layout_constraintHorizontal_bias="0.29"
+            app:layout_constraintVertical_bias="0.52"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

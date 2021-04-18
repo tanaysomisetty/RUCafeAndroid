@@ -107,6 +107,7 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
                 }
             }
         });
+        setTitle("Order Coffee");
     }
 
     @Override

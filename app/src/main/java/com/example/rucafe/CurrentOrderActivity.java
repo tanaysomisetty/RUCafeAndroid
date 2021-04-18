@@ -20,5 +20,8 @@ public class CurrentOrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_order);
+        //removeBtn = findViewById(R.id.removeItemBtn);
+        //placeOrderBtn = findViewById(R.id.placeOrderBtn);
+        setTitle("Current Order");
     }
 }

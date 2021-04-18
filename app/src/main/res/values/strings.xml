@@ -22,11 +22,23 @@
     <string name="your_order_Coffee">Your Order</string>
     <string name="your_order_Donut">Your Order</string>
     <string name="subtotal_current_order">subtotal $</string>
-    <string name="sales_tax_current_order">Sales Tax</string>
-    <string name="total_current_order">Total</string>
+    <string name="sales_tax_current_order">Sales Tax $</string>
+    <string name="total_current_order">Total $</string>
     <string name="place_current_order">Place Order</string>
     <string name="remove_current_order">Remove</string>
     <string name="cancel_order_store_order">Cancel Order</string>
+    <string name="select_current_order">Select</string>
+    <string name="item_id_current_order">Item ID</string>
+    <string name="item_details_current_order">Item Details</string>
+    <string name="price_current_order">Price</string>
+    <string name="_0_0">0.0</string>
+    <string name="plus_count_donut">+</string>
+    <string name="default_quantity_donuts">0</string>
+    <string name="minus_count_donuts">-</string>
+    <string name="cofee_default_subtotal">0.0</string>
+    <string name="order_id_store_orders">Order ID</string>
+    <string name="total_amount_store_orders">Total Amount</string>
+    <string name="view_details_store_orders">View Details</string>
     <string-array name="flavorsSpinner">
         <item>Glazed</item>
         <item>Strawberry</item>

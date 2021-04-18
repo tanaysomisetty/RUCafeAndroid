@@ -37,6 +37,7 @@ public class OrderingDonutsActivity extends AppCompatActivity implements Adapter
 
         donutTypeRadioGrp = findViewById(R.id.donutTypeRadioGrp);
         textView = findViewById(R.id.text_view_selected);
+        setTitle("Order Donuts");
     }
 
     @Override

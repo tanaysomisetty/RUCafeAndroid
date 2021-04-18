@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">RUCafe</string>
+    <string name="ru_cafe">RU Cafe</string>
+    <string name="ordering_coffee">Ordering Coffee</string>
+    <string name="ordering_donuts">Ordering Donuts</string>
+    <string name="store_orders">Store Orders</string>
+    <string name="current_orders">Current Orders</string>
+    <string name="add_to_order">Add to Order</string>
+    <string name="you_selected">You selected:</string>
+    <string name="donut_hole">Donut Hole</string>
+    <string name="cake_donut">Cake Donut</string>
+    <string name="yeast_donut">Yeast Donut</string>
+    <string name="cream">Cream</string>
+    <string name="milk">Milk</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="syrup">Syrup</string>
+    <string name="caramel">Caramel</string>
+    <string name="subtotalCoffee">Subtotal $</string>
+    <string name="subtotalDonut">Subtotal $</string>
+    <string name="plusCount">+</string>
+    <string name="subtotal">Subtotal $</string>
+    <string name="your_order_Coffee">Your Order</string>
+    <string name="your_order_Donut">Your Order</string>
+    <string name="subtotal_current_order">subtotal $</string>
+    <string name="sales_tax_current_order">Sales Tax</string>
+    <string name="total_current_order">Total</string>
+    <string name="place_current_order">Place Order</string>
+    <string name="remove_current_order">Remove</string>
+    <string name="cancel_order_store_order">Cancel Order</string>
+    <string-array name="flavorsSpinner">
+        <item>Glazed</item>
+        <item>Strawberry</item>
+        <item>Chocolate</item>
+    </string-array>
+    <string-array name="sizeSpinner">
+        <item>Short</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
+</resources>

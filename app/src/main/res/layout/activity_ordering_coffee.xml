@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".OrderingCoffeeActivity">
+
+    <Spinner
+            android:layout_width="110dp"
+            android:layout_height="56dp" android:id="@+id/sizeSpinner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.259"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.518"/>
+    <Button
+            android:text="@string/add_to_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/orderBtnCoffee"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.534"/>
+    <CheckBox
+            android:text="@string/cream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/creamCheckbox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.064"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.077"/>
+    <CheckBox
+            android:text="@string/milk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/milkCheckbox"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"/>
+    <CheckBox
+            android:text="@string/whipped_cream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/whippedCheckbox"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="108dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.095"/>
+    <CheckBox
+            android:text="@string/caramel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/caramelCheckbox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintVertical_bias="0.11"/>
+    <CheckBox
+            android:text="@string/syrup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/syrupCheckbox"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.064"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.578"/>
+    <TextView
+            android:text="@string/subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/subtotalCoffee"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.672"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

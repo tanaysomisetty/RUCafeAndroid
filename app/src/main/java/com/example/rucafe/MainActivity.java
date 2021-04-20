@@ -56,14 +56,3 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-    /*public void openOrderingDonuts() {
-        Intent intent = new Intent(this, OrderingDonutsActivity.class);
-        startActivity(intent);
-    }
-
-    public void openOrderingCoffee() {
-        Intent intent = new Intent(this, OrderingCoffeeActivity.class);
-        startActivity(intent);
-    }
-}
-*/

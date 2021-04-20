@@ -39,6 +39,10 @@
     <string name="order_id_store_orders">Order ID</string>
     <string name="total_amount_store_orders">Total Amount</string>
     <string name="view_details_store_orders">View Details</string>
+    <string name="short_coffee_size">Short</string>
+    <string name="tall_coffee_size">Tall</string>
+    <string name="grande_coffee_size">Grande</string>
+    <string name="venti_coffee_size">Venti</string>
     <string-array name="flavorsSpinner">
         <item>Glazed</item>
         <item>Strawberry</item>

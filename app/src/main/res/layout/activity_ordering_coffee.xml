@@ -7,20 +7,38 @@
         android:layout_height="match_parent"
         tools:context=".OrderingCoffeeActivity">
 
-    <Spinner
-            android:layout_width="110dp"
-            android:layout_height="56dp" android:id="@+id/sizeSpinner"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.259"
+    <RadioGroup
+            android:layout_width="146dp"
+            android:layout_height="147dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.518"/>
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            android:layout_marginBottom="380dp" android:id="@+id/coffee_radio_grp">
+        <RadioButton
+                android:text="@string/short_coffee_size"
+                android:layout_width="match_parent"
+                android:checked="true"
+                android:layout_height="wrap_content" android:id="@+id/radioButton4" android:onClick="setCoffeeSize"/>
+        <RadioButton
+                android:text="@string/tall_coffee_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/radioButton3" android:onClick="setCoffeeSize"/>
+        <RadioButton
+                android:text="@string/grande_coffee_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/radioButton2" android:onClick="setCoffeeSize"/>
+        <RadioButton
+                android:text="@string/venti_coffee_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/radioButton" android:onClick="setCoffeeSize"/>
+    </RadioGroup>
     <Button
             android:text="@string/add_to_order"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/orderBtnCoffee"
+            android:layout_height="wrap_content" android:id="@+id/orderBtnDonut"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.534"/>
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="0.534"
+            android:onClick="addToOrderCoffee"/>
     <CheckBox
             android:text="@string/cream"
             android:layout_width="wrap_content"
@@ -28,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.064"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.077"/>
+            app:layout_constraintHorizontal_bias="0.077" android:onClick="addInSelect"/>
     <CheckBox
             android:text="@string/milk"
             android:layout_width="wrap_content"
@@ -36,14 +54,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.11"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"/>
+            app:layout_constraintHorizontal_bias="0.073" android:onClick="addInSelect"/>
     <CheckBox
             android:text="@string/whipped_cream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/whippedCheckbox"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="108dp" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.095"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.095"
+            android:onClick="addInSelect"/>
     <CheckBox
             android:text="@string/caramel"
             android:layout_width="wrap_content"
@@ -51,7 +70,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.61"
-            app:layout_constraintVertical_bias="0.11"/>
+            app:layout_constraintVertical_bias="0.11" android:onClick="addInSelect"/>
     <CheckBox
             android:text="@string/syrup"
             android:layout_width="wrap_content"
@@ -59,23 +78,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.064"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.578"/>
+            app:layout_constraintHorizontal_bias="0.578" android:onClick="addInSelect"/>
     <TextView
             android:text="@string/subtotal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/subtotalCoffee"
+            android:layout_height="wrap_content" android:id="@+id/subtotal_textview_coffee"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.672"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.679"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"/>
+            app:layout_constraintHorizontal_bias="0.103"/>
     <TextView
             android:text="@string/cofee_default_subtotal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView11"
+            android:layout_height="wrap_content" android:id="@+id/default_subtotal_coffee"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="484dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="252dp"
             android:layout_marginRight="252dp" android:layout_marginLeft="5dp" android:layout_marginStart="5dp"
-            app:layout_constraintStart_toEndOf="@+id/subtotalCoffee" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="228dp" app:layout_constraintHorizontal_bias="0.29"
-            app:layout_constraintVertical_bias="0.52"/>
+            app:layout_constraintStart_toEndOf="@+id/subtotal_textview_coffee"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="228dp" app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintVertical_bias="0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

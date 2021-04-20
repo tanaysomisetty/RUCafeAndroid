@@ -1,12 +1,7 @@
 package com.example.rucafe;
 
 import android.view.View;
-import android.widget.Button;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -15,35 +10,40 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
 
     private Button orderBtnCoffee;
     private CheckBox milkCheckbox, creamCheckbox, whippedCheckbox, syrupCheckbox, caramelCheckbox;
-    private Spinner sizeSpinner;
+    private RadioGroup coffeeSizeRadioGrp;
+    private RadioButton radioButton;
+    private Coffee coffeeOrder;
+    private TextView subtotalTextview;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordering_coffee);
-        sizeSpinner = findViewById(R.id.sizeSpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sizeSpinner,
-                android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sizeSpinner.setAdapter(adapter);
-        sizeSpinner.setOnItemSelectedListener(this);
-        orderBtnCoffee = findViewById(R.id.orderBtnCoffee);
+        orderBtnCoffee = findViewById(R.id.orderBtnDonut);
         orderBtnCoffee.setOnClickListener(this);
         milkCheckbox = findViewById(R.id.milkCheckbox);
         creamCheckbox = findViewById(R.id.creamCheckbox);
         whippedCheckbox = findViewById(R.id.whippedCheckbox);
         syrupCheckbox = findViewById(R.id.syrupCheckbox);
         caramelCheckbox = findViewById(R.id.caramelCheckbox);
+        coffeeSizeRadioGrp = findViewById(R.id.coffee_radio_grp);
 
         creamCheckbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (creamCheckbox.isChecked()) {
                     String creamCheckboxData = creamCheckbox.getText().toString();
+                    AddIn cream = new AddIn("cream");
+                    coffeeOrder.add(cream);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this, creamCheckboxData+" selected",
                             Toast.LENGTH_SHORT).show();
                 } else if (!creamCheckbox.isChecked()) {
                     String creamUncheckedData = creamCheckbox.getText().toString();
+                    AddIn cream = new AddIn("cream");
+                    coffeeOrder.remove(cream);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this, creamUncheckedData+" unselected",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -54,10 +54,16 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
             public void onClick(View v) {
                 if (milkCheckbox.isChecked()) {
                     String milkCheckboxData = milkCheckbox.getText().toString();
+                    AddIn milk = new AddIn("milk");
+                    coffeeOrder.add(milk);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this,milkCheckboxData+" selected",
                             Toast.LENGTH_SHORT).show();
                 } else if (!milkCheckbox.isChecked()) {
                     String milkUncheckedData = milkCheckbox.getText().toString();
+                    AddIn milk = new AddIn("milk");
+                    coffeeOrder.remove(milk);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this, milkUncheckedData+" unselected",
                             Toast.LENGTH_SHORT).show();
 
@@ -69,11 +75,17 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
             public void onClick(View v) {
                 if (whippedCheckbox.isChecked()) {
                     String whippedCheckboxData = whippedCheckbox.getText().toString();
+                    AddIn whippedCream = new AddIn("whippedCream");
+                    coffeeOrder.add(whippedCream);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this,whippedCheckboxData+" selected",
                             Toast.LENGTH_SHORT).show();
                 } else if (!whippedCheckbox.isChecked()) {
                     String whippedUncheckedData = whippedCheckbox.getText().toString();
-                    Toast.makeText(OrderingCoffeeActivity.this,whippedUncheckedData+" selected",
+                    AddIn whippedCream = new AddIn("whippedCream");
+                    coffeeOrder.remove(whippedCream);
+                    addInSelect(v);
+                    Toast.makeText(OrderingCoffeeActivity.this,whippedUncheckedData+" unselected",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -83,10 +95,16 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
             public void onClick(View v) {
                 if (caramelCheckbox.isChecked()) {
                     String caramelCheckboxData = caramelCheckbox.getText().toString();
+                    AddIn caramel = new AddIn("caramel");
+                    coffeeOrder.add(caramel);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this,caramelCheckboxData+" selected",
                             Toast.LENGTH_SHORT).show();
                 } else if (!caramelCheckbox.isChecked()) {
                     String caramelUncheckedData = caramelCheckbox.getText().toString();
+                    AddIn caramel = new AddIn("caramel");
+                    coffeeOrder.remove(caramel);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this,caramelUncheckedData+" unselected",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -97,10 +115,16 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
             public void onClick(View v) {
                 if (syrupCheckbox.isChecked()) {
                     String syrupCheckBoxData = syrupCheckbox.getText().toString();
+                    AddIn syrup = new AddIn("syrup");
+                    coffeeOrder.add(syrup);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this,syrupCheckBoxData+ " selected",
                             Toast.LENGTH_SHORT).show();
                 } else if (!syrupCheckbox.isChecked()) {
                     String syrupUncheckedData = syrupCheckbox.getText().toString();
+                    AddIn syrup = new AddIn("syrup");
+                    coffeeOrder.remove(syrup);
+                    addInSelect(v);
                     Toast.makeText(OrderingCoffeeActivity.this, syrupUncheckedData+" unselected",
                             Toast.LENGTH_SHORT).show();
 
@@ -108,6 +132,16 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
             }
         });
         setTitle("Order Coffee");
+
+        coffeeOrder = new Coffee();
+        coffeeOrder.setSize("Short");
+        coffeeOrder.add(coffeeOrder);
+
+        String price = Double.toString(coffeeOrder.itemPrice());
+        subtotalTextview = findViewById(R.id.default_subtotal_coffee);
+        subtotalTextview.setText(price);
+
+
     }
 
     @Override
@@ -122,7 +156,74 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
 
     @Override
     public void onClick(View v) {
+
+        addToOrderCoffee(v);
         Toast.makeText(OrderingCoffeeActivity.this,"Order Added",Toast.LENGTH_SHORT).show();
+        int radioId = coffeeSizeRadioGrp.getCheckedRadioButtonId();
+        radioButton = findViewById(radioId);
+
+
+
+
+    }
+    public void setCoffeeSize(View v) {
+        int radioButtonID = coffeeSizeRadioGrp.getCheckedRadioButtonId();
+        radioButton = coffeeSizeRadioGrp.findViewById(radioButtonID);
+
+        if (radioButton.getText().equals("Short")) {
+            coffeeOrder.setSize("Short");
+        }
+        else if (radioButton.getText().equals("Tall")) {
+            coffeeOrder.setSize("Tall");
+
+        }
+        else if (radioButton.getText().equals("Grande")) {
+            coffeeOrder.setSize("Grande");
+
+        } else if (radioButton.getText().equals("Venti")) {
+            coffeeOrder.setSize("Venti");
+        }
+
+        String price = Double.toString(coffeeOrder.itemPrice());
+        subtotalTextview = findViewById(R.id.default_subtotal_coffee);
+        subtotalTextview.setText(price);
+
+    }
+
+    public void addInSelect(View v) {
+        if (creamCheckbox.isChecked()) {
+            String price = Double.toString(coffeeOrder.itemPrice());
+            subtotalTextview = findViewById(R.id.default_subtotal_coffee);
+            subtotalTextview.setText(price);
+
+        } else if (milkCheckbox.isChecked()) {
+            String price = Double.toString(coffeeOrder.itemPrice());
+            subtotalTextview.findViewById(R.id.default_subtotal_coffee);
+            subtotalTextview.setText(price);
+
+        } else if (whippedCheckbox.isChecked()) {
+            String price = Double.toString(coffeeOrder.itemPrice());
+            subtotalTextview = findViewById(R.id.default_subtotal_coffee);
+            subtotalTextview.setText(price);
+
+        } else if (syrupCheckbox.isChecked()) {
+            String price = Double.toString(coffeeOrder.itemPrice());
+            subtotalTextview = findViewById(R.id.default_subtotal_coffee);
+            subtotalTextview.setText(price);
+
+        } else if (caramelCheckbox.isChecked()) {
+            String price = Double.toString(coffeeOrder.itemPrice());
+            subtotalTextview = findViewById(R.id.default_subtotal_coffee);
+            subtotalTextview.setText(price);
+        }
+
+
+
+    }
+
+    public void addToOrderCoffee(View v) {
+        MainActivity.currOrder.add(coffeeOrder);
+        finish();
 
     }
 }

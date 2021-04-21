@@ -51,8 +51,9 @@ public class OrderingDonutsActivity extends AppCompatActivity implements Adapter
      */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        System.out.println("onItemSelected called......");
+        System.out.println("onItemSelected called......"+view);
 
+        setDonutFlavor(view);
         String flavorsText = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(),flavorsText,Toast.LENGTH_SHORT).show();
     }
@@ -73,7 +74,8 @@ public class OrderingDonutsActivity extends AppCompatActivity implements Adapter
      */
     @Override
     public void onClick(View v) {
-        System.out.println("onClick called......");
+        System.out.println("onClick called......"+v);
+
         addToOrderDonut(v);
 
         Toast.makeText(OrderingDonutsActivity.this, "Order Added", Toast.LENGTH_SHORT).show();

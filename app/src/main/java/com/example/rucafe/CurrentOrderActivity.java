@@ -24,4 +24,8 @@ public class CurrentOrderActivity extends AppCompatActivity {
         //placeOrderBtn = findViewById(R.id.placeOrderBtn);
         setTitle("Current Order");
     }
+
+    public void placeOrder() {
+
+    }
 }

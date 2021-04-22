@@ -76,7 +76,7 @@ public class Coffee extends MenuItem implements Customizable {
     }
 
     /**
-     * Method to calculate the price for different  coffee sizes
+     * Method to calculate the price for different coffee sizes
      *
      * @return double value that gets the price of the coffee
      */

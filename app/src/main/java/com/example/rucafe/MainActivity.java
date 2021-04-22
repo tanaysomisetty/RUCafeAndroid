@@ -54,5 +54,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * Accessory method to set the current order
+     * @param order Object
+     */
+    public static void setOrder(Order order) {
+        currOrder = order;
+    }
+
+    /**
+     * Accessory method to get the current order
+     * @return currOrder Object
+     */
+    public static Order getOrder() {
+        return currOrder;
+    }
 }
 

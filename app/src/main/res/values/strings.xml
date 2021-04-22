@@ -21,7 +21,7 @@
     <string name="subtotal">Subtotal $</string>
     <string name="your_order_Coffee">Your Order</string>
     <string name="your_order_Donut">Your Order</string>
-    <string name="subtotal_current_order">subtotal $</string>
+    <string name="subtotal_current_order">Subtotal $</string>
     <string name="sales_tax_current_order">Sales Tax $</string>
     <string name="total_current_order">Total $</string>
     <string name="place_current_order">Place Order</string>
@@ -43,6 +43,14 @@
     <string name="tall_coffee_size">Tall</string>
     <string name="grande_coffee_size">Grande</string>
     <string name="venti_coffee_size">Venti</string>
+    <string name="default_current_order_subtotal">0.0</string>
+    <string name="sales_tax_default_current">0.0</string>
+    <string name="subtotal_default_current">0.0</string>
+    <string name="price_table_current_order">price</string>
+    <string name="donut_image_main">Donut image</string>
+    <string name="coffee_image_main">coffee image</string>
+    <string name="current_order_main">current order image</string>
+    <string name="store_order_image">store order image</string>
     <string-array name="flavorsSpinner">
         <item>Glazed</item>
         <item>Strawberry</item>

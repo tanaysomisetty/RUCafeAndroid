@@ -15,6 +15,7 @@ import java.util.List;
 public class StoreOrders implements Customizable {
     private List<Order> orderList = new ArrayList();
     private int numOrders = 0;
+    private List<Integer> removedOrderIds = new ArrayList<>();
 
     /**
      * This method adds an order object to the list of store orders
@@ -51,6 +52,40 @@ public class StoreOrders implements Customizable {
             return false;
         }
         return false;
+    }
+
+    /**
+     * Method to remove orders from all store orders
+     * @param 'none'
+     */
+    public void removeOrdersFromStore() {
+        List<Order> tempOrders = new ArrayList<>();
+        tempOrders.addAll(orderList);
+
+        for (int orderIds:removedOrderIds) {
+                for (Order order: tempOrders) {
+                    if (order.getOrderID() == orderIds) {
+                        remove(order);
+                    }
+            }
+        }
+    }
+
+    /**
+     * Method to update the removed list of orders according to their IDs
+     * @param orderId of the removed Orders
+     * @param remove boolean that corresponds to list of IDs
+     */
+    public void updateRemovedOrders(final int orderId, final boolean remove) {
+
+        if (remove) {
+            removedOrderIds.add(orderId);
+        } else {
+            removedOrderIds.remove(orderId);
+        }
+
+
+
     }
 
     /**

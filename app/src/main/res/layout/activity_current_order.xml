@@ -10,24 +10,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
-            android:layout_margin="40dp">
+            android:id="@+id/tablelayoutCurrentOrder" android:layout_marginLeft="40dp" android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp" android:layout_marginRight="40dp" android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp">
 
         <!-- Table Heading -->
 
         <TableRow
-                android:background="@color/colorAccent">
+                android:background="@color/colorAccent" android:layout_height="match_parent"
+                android:layout_width="wrap_content" android:layout_weight="0.2">
 
             <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="@string/select_current_order"
                     android:textColor="@android:color/white"
                     android:padding="10sp"
                     android:textSize="14sp"
-                    android:layout_weight="2"
+                    android:layout_weight="0.2"
                     android:gravity="center_horizontal"
-            />
-
+                    android:id="@+id/currentOrderSelect"/>
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -35,9 +37,9 @@
                     android:textColor="@android:color/white"
                     android:padding="10sp"
                     android:textSize="14sp"
-                    android:layout_weight="2"
+                    android:layout_weight="0.2"
                     android:gravity="center_horizontal"
-            />
+                    android:id="@+id/currentOrderItemID" android:background="#12EFDA"/>
             <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -45,9 +47,15 @@
                     android:textColor="@android:color/white"
                     android:padding="10sp"
                     android:textSize="14sp"
-                    android:layout_weight="4"
+                    android:layout_weight="0.4"
                     android:gravity="center_horizontal"
-            />
+                    android:id="@+id/currentOrderItemDetails" android:background="#45E4D4"/>
+            <TextView
+                    android:text="@string/price_table_current_order"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:id="@+id/currentOrderItemPrice"
+                    android:background="#7DDFD6" android:textColor="#FFFFFF" android:layout_weight="0.2"
+                    android:padding="10sp"/>
 
 
         </TableRow>
@@ -58,50 +66,56 @@
     <Button
             android:text="@string/place_current_order"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button" android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content" android:id="@+id/cancelOrderStoreBtn" android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true" android:layout_marginRight="169dp" android:layout_marginEnd="169dp"
             android:layout_alignParentBottom="true" android:layout_marginBottom="123dp"/>
     <Button
             android:text="@string/remove_current_order"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button2" android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content" android:id="@+id/removeBtnCurrentOrder" android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true" android:layout_marginRight="178dp" android:layout_marginEnd="178dp"
-            android:layout_above="@+id/button" android:layout_marginBottom="154dp"/>
+            android:layout_above="@+id/cancelOrderStoreBtn" android:layout_marginBottom="154dp"/>
     <TextView
             android:text="@string/subtotal_current_order"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content" android:id="@+id/subtotalTextviewCurrent"
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="291dp" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="202dp" android:layout_marginEnd="202dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="208dp" android:layout_marginEnd="208dp"/>
     <TextView
             android:text="@string/sales_tax_current_order"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView4" android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content" android:id="@+id/salesTaxTextviewCurrent"
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="268dp" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="193dp" android:layout_marginEnd="193dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="209dp" android:layout_marginEnd="209dp"/>
     <TextView
             android:text="@string/total_current_order"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView5" android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content" android:id="@+id/totalTextviewCurrent"
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="238dp" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="207dp" android:layout_marginEnd="207dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="209dp" android:layout_marginEnd="209dp"/>
     <TextView
-            android:text="0.0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView6" android:layout_alignParentBottom="true"
-            android:layout_marginBottom="291dp" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="181dp" android:layout_marginEnd="181dp"/>
-    <TextView
-            android:text="0.0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView7" android:layout_alignParentBottom="true"
-            android:layout_marginBottom="269dp" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="169dp" android:layout_marginEnd="169dp"/>
-    <TextView
-            android:text="0.0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView8" android:layout_alignParentBottom="true"
+            android:text="@string/default_current_order_subtotal"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content" android:id="@+id/totalDefaultCurrent"
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="239dp" android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" android:layout_marginRight="179dp" android:layout_marginEnd="179dp"/>
+            android:layout_alignParentRight="true" android:layout_marginRight="112dp" android:layout_marginEnd="112dp"/>
+    <TextView
+            android:text="@string/sales_tax_default_current"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content" android:id="@+id/salesTaxCurrentOrder"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="268dp" android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" android:layout_marginRight="119dp" android:layout_marginEnd="119dp"/>
+    <TextView
+            android:text="@string/subtotal_default_current"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content" android:id="@+id/subtotalCurrentOrder"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="291dp" android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" android:layout_marginRight="115dp" android:layout_marginEnd="115dp"/>
 
 </RelativeLayout>

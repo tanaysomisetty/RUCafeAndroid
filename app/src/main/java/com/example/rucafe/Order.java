@@ -14,6 +14,7 @@ public class Order implements Customizable {
     final static double SALES_TAX = .06625;
     private static int nextOrderID = 1;
     private final List<MenuItem> menuItemList = new ArrayList<>();
+    private List<Integer> removedIds = new ArrayList<>();
     private int numItems = 0;
     private final int orderID;
     private double subtotal = 0;
@@ -68,6 +69,8 @@ public class Order implements Customizable {
             this.numItems++;
             subtotal = subtotal + item.getPrice();
             total = calculateTotalAmt();
+
+
             return true;
         }
         return false;
@@ -93,6 +96,7 @@ public class Order implements Customizable {
             }
             return false;
         }
+
         return false;
     }
 
@@ -120,12 +124,54 @@ public class Order implements Customizable {
     }
 
     /**
+     * Accessory method to get the sales tax
+     * @return a double value that corresponds to the sales tax
+     */
+    public double getSalesTax() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.UP);
+        return Double.parseDouble(df.format(this.subtotal*SALES_TAX));
+    }
+
+
+
+    /**
      * Accessory method to get the list of menu items
      *
      * @return a List object
      */
     public List getMenuItemList() {
         return this.menuItemList;
+    }
+
+    /**
+     *Method to update the removed list of items according to their IDs
+     * @param itemId of the removed items
+     * @param remove boolean that corresponds to list of IDs
+     */
+    public void updateRemovedItems(final int itemId, final boolean remove) {
+       if(remove) {
+           removedIds.add(itemId);
+       }else {
+           removedIds.remove(itemId);
+       }
+
+    }
+
+    /**
+     * Method to remove items from the current order
+     */
+    public void removeItemsFromOrder() {
+        List<MenuItem> tempMenuItems = new ArrayList<>();
+        tempMenuItems.addAll(menuItemList);
+
+        for(int id: removedIds) {
+            for(MenuItem menuItem: tempMenuItems) {
+                if(menuItem.getMenuItemID() == id) {
+                    remove(menuItem);
+                }
+            }
+        }
     }
 
     /**

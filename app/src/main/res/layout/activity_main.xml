@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/storeOrdersBtn"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.681" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.682" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginRight="400dp" android:layout_marginEnd="400dp"
     />
@@ -23,9 +23,9 @@
             android:layout_height="60dp"
             android:id="@+id/orderCoffeeBtn"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="472dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="512dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="400dp"
-            android:layout_marginEnd="400dp" app:layout_constraintHorizontal_bias="0.058"/>
+            android:layout_marginEnd="400dp" app:layout_constraintHorizontal_bias="0.0"/>
     <Button
             android:text="@string/current_orders"
             android:layout_width="wrap_content"
@@ -53,6 +53,34 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.462"/>
+    <ImageView
+            android:layout_width="115dp"
+            android:layout_height="85dp" app:srcCompat="@drawable/baked_donut_recipe_featured"
+            android:id="@+id/imageView"
+            android:src="@drawable/baked_donut_recipe_featured"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="280dp" android:layout_marginTop="60dp" android:layout_marginStart="280dp"
+            android:contentDescription="@string/donut_image_main"/>
+    <ImageView
+            android:layout_width="141dp"
+            android:layout_height="83dp" app:srcCompat="@drawable/cup_of_coffee_198136"
+            android:id="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp" android:contentDescription="@string/coffee_image_main"/>
+    <ImageView
+            android:layout_width="107dp"
+            android:layout_height="113dp" app:srcCompat="@drawable/current_order" android:id="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="352dp" android:layout_marginLeft="288dp" android:layout_marginStart="288dp"
+            android:contentDescription="@string/current_order_main"/>
+    <ImageView
+            android:layout_width="173dp"
+            android:layout_height="85dp" app:srcCompat="@drawable/store_order_image"
+            android:id="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="284dp"
+            android:contentDescription="@string/store_order_image"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

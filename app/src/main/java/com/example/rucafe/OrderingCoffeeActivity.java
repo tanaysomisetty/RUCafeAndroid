@@ -1,7 +1,13 @@
 package com.example.rucafe;
 
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RadioGroup;
+import android.widget.RadioButton;
+import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -20,7 +26,7 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordering_coffee);
-        orderBtnCoffee = findViewById(R.id.orderBtnDonut);
+        orderBtnCoffee = findViewById(R.id.orderBtnCoffee);
         orderBtnCoffee.setOnClickListener(this);
         milkCheckbox = findViewById(R.id.milkCheckbox);
         creamCheckbox = findViewById(R.id.creamCheckbox);
@@ -144,16 +150,29 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
 
     }
 
+    /**
+     * Method called when an item in the spinner is selected
+     * @param parent, view, position, id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
     }
 
+    /**
+     * Method relating to the functions of the spinner.
+     * Called when nothing is actually selected
+     * @param parent
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
 
+    /**
+     * On click method called when a certain button is clicked
+     * @param v View
+     */
     @Override
     public void onClick(View v) {
 
@@ -166,6 +185,11 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
 
 
     }
+
+    /**
+     * Method to set the desired coffee size selected by the user in the Activity
+     * @param v view
+     */
     public void setCoffeeSize(View v) {
         int radioButtonID = coffeeSizeRadioGrp.getCheckedRadioButtonId();
         radioButton = coffeeSizeRadioGrp.findViewById(radioButtonID);
@@ -190,6 +214,10 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
 
     }
 
+    /**
+     * Method to select the attributes of a coffee object such as the size and add-ins in the Activity
+     * @param v view
+     */
     public void addInSelect(View v) {
         if (creamCheckbox.isChecked()) {
             String price = Double.toString(coffeeOrder.itemPrice());
@@ -221,6 +249,10 @@ public class OrderingCoffeeActivity extends AppCompatActivity implements Adapter
 
     }
 
+    /**
+     * Method to reset the fields of the order object and add the coffee to the order object
+     * @param v view
+     */
     public void addToOrderCoffee(View v) {
         MainActivity.currOrder.add(coffeeOrder);
         finish();

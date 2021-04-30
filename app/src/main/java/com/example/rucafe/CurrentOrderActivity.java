@@ -1,3 +1,8 @@
+/**
+ *The "Activity" class that implements all functionalities pertaining  to the current order of items
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
 package com.example.rucafe;
 
 import android.graphics.Color;
@@ -19,6 +24,24 @@ public class CurrentOrderActivity extends AppCompatActivity implements View.OnCl
 
     private Button removeBtn;
     private Button placeOrderBtn;
+    private TableLayout currentOrderTable;
+    private TextView subtotalCurrentTextview;
+    private TextView totalCurrentTextview;
+    private TextView salesTaxCurrentTextview;
+    final int LEFT_PADDING_CHECKBOX = 50;
+    final int RIGHT_PADDING_CHECKBOX = 50;
+    final int TOP_PADDING_CHECKBOX = 10;
+    final int BOTTOM_PADDING_CHECKBOX = 10;
+    final int LEFT_PADDING_ID_TEXTVIEW = 20;
+    final int TOP_PADDING_ID_TEXTVIEW = 10;
+    final int RIGHT_PADDING_ID_TEXTVIEW = 50;
+    final int BOTTOM_PADDING_ID_TEXTVIEW = 10;
+    final int LEFT_PADDING_DETAILS_TEXTVIEW = 20;
+    final int TOP_PADDING_DETAILS_TEXTVIEW = 10;
+    final int RIGHT_PADDING_DETAILS_TEXTVIEW = 10;
+    final int BOTTOM_PADDING_DETAILS_TEXTVIEW = 10;
+    final int PADDING_PRICE_TEXTVIEW = 10;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,6 +217,43 @@ public class CurrentOrderActivity extends AppCompatActivity implements View.OnCl
         currentOrder = MainActivity.getOrder();
         currentOrder.removeAllItems();
         finish();
+
+    }
+
+    /**
+     *Method to remove an order from the item list in the current order Activity
+     * @param 'none'
+     */
+    public void removeOrder() {
+        MainActivity.currOrder.removeItemsFromOrder();
+
+        TableLayout table = findViewById(R.id.tablelayoutCurrentOrder);
+
+        int childCount = table.getChildCount();
+
+        // Remove all rows except the first one
+        if (childCount > 1) {
+            table.removeViews(1, childCount - 1);
+        }
+
+
+        displayItemListAndPrice();
+
+    }
+
+    /**
+     * This method is called upon clicking a certain putton
+     * @param v View
+     */
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.removeBtnCurrentOrder) {
+            removeOrder();
+        } else if (id == R.id.cancelOrderStoreBtn) {
+            placeOrder(v);
+            Toast.makeText(CurrentOrderActivity.this, "Order Placed", Toast.LENGTH_SHORT).show();
+        }
 
     }
 }

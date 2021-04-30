@@ -1,13 +1,12 @@
 package com.example.rucafe;
-
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-
 /**
  *This class extends the MenuItem class and includes specific data and operations for a donut object,
  * such as the donut type, flavor and the quantity
  * @author Sailokesh Mondi, Tanay Somisetty
  */
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class Donut extends MenuItem implements Customizable{
     private String type;
@@ -42,22 +41,6 @@ public class Donut extends MenuItem implements Customizable{
      */
     public void setFlavor(String flavor) {
         this.flavor = flavor;
-    }
-
-    /**
-     * Accessory method to get the quantity of the donuts
-     * @return the integer quantity of donuts
-     */
-    public int getQuantity() {
-        return this.quantity;
-    }
-
-    /**
-     * Method to get the donut flavors
-     * @return a string array of the donut flavors
-     */
-    public static String[] getDonutFlavors() {
-        return donutFlavors;
     }
 
     /**

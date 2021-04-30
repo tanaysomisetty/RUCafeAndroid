@@ -1,3 +1,9 @@
+/**
+ * This class implements Customizable and specific data and operations pertaining to an order
+ *
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
 package com.example.rucafe;
 
 import java.math.RoundingMode;
@@ -5,11 +11,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * This class implements Customizable and specific data and operations pertaining to an order
- *
- * @author Sailokesh Mondi, Tanay Somisetty
- */
 public class Order implements Customizable {
     final static double SALES_TAX = .06625;
     private static int nextOrderID = 1;
@@ -28,15 +29,6 @@ public class Order implements Customizable {
     public Order() {
         this.orderID = nextOrderID;
         nextOrderID++;
-    }
-
-    /**
-     * Clone constructor that creates a new order ID
-     *
-     * @param orderID of value int
-     */
-    public Order(int orderID) {
-        this.orderID = orderID;
     }
 
     /**
@@ -231,32 +223,5 @@ public class Order implements Customizable {
      */
     public double getTotal() {
         return total;
-    }
-
-    /**
-     * Accessor method to get the details of all orders to be used in the store orders controller
-     *
-     * @return String that represent the details of all the orders
-     */
-    public String getDetails() {
-        return details;
-    }
-
-    /**
-     * Method to see whether the removed variable is removed or not removed
-     *
-     * @return the removed instance variable
-     */
-    public boolean isRemoved() {
-        return removed;
-    }
-
-    /**
-     * Accessor method to set the removed variable that can be used in the store orders controller
-     *
-     * @param removed instance variable
-     */
-    public void setRemoved(boolean removed) {
-        this.removed = removed;
     }
 }

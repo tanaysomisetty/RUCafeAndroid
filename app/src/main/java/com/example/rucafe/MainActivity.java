@@ -1,3 +1,8 @@
+/**
+ *The "Activity" class that acts as the Main Menu to all other activities
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
 package com.example.rucafe;
 
 import android.view.View;
@@ -7,10 +12,9 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
-    //private Button orderDonutsBtn;
-    //private Button orderCoffeeBtn;
-    //private Button currentOrderBtn;
-    //private Button storeOrdersBtn;
+    public static Order currOrder = new Order();
+
+    public static StoreOrders storeOrder = new StoreOrders();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

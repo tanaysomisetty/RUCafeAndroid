@@ -1,3 +1,8 @@
+/**
+ *The "Activity" class that implements all functionalities pertaining to store orders
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
 package com.example.rucafe;
 
 import android.graphics.Color;

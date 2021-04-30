@@ -9,13 +9,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".StoreOrdersActivity">
+        <activity android:name=".StoreOrdersActivity"
+                  android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".CurrentOrderActivity">
+        <activity android:name=".CurrentOrderActivity"
+                  android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".OrderingCoffeeActivity">
+        <activity android:name=".OrderingCoffeeActivity"
+                  android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".OrderingDonutsActivity">
+        <activity android:name=".OrderingDonutsActivity"
+                  android:parentActivityName=".MainActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

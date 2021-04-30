@@ -1,17 +1,14 @@
-package com.example.rucafe;
-
-
-import java.util.ArrayList;
-import java.io.File;
-import java.io.PrintWriter;
-import java.io.FileNotFoundException;
-import java.util.List;
-
 /**
  *This class implements Customizable and includes specific data
  * and operations pertaining to all store orders
  * @author Sailokesh Mondi, Tanay Somisetty
  */
+
+package com.example.rucafe;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class StoreOrders implements Customizable {
     private List<Order> orderList = new ArrayList();
     private int numOrders = 0;
@@ -19,7 +16,6 @@ public class StoreOrders implements Customizable {
 
     /**
      * This method adds an order object to the list of store orders
-     *
      * @param obj Object
      * @return true if the order is added, false otherwise
      */
@@ -34,7 +30,6 @@ public class StoreOrders implements Customizable {
 
     /**
      * This method removes an order object from the list of store orders
-     *
      * @param obj Object
      * @return true if the order is removed, false otherwise
      */
@@ -90,7 +85,7 @@ public class StoreOrders implements Customizable {
 
     /**
      * This method consists of the String representation of the full order list
-     *
+     * @param 'none'
      * @return a String that corresponds to the order list
      */
     @Override
@@ -107,30 +102,8 @@ public class StoreOrders implements Customizable {
     }
 
     /**
-     * Method to export the orders and save them to a text file. This method is
-     * called in the store orders controller
-     *
-     * @return a File object
-     */
-    public File exportOrders() {
-        if (orderList.size() == 0) {
-            return null;
-        }
-
-        File file = new File("Store Orders.txt");
-        try {
-            PrintWriter pw = new PrintWriter(file);
-            pw.print(this.toString());
-            pw.close();
-        } catch (FileNotFoundException e) {
-            return null;
-        }
-        return file;
-    }
-
-    /**
      * Accessory method to get the full array list of orders
-     *
+     * @param 'none'
      * @return the array list of orders
      */
     public List<Order> getOrderList() {

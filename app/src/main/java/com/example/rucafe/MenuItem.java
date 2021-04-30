@@ -1,16 +1,15 @@
-package com.example.rucafe;
-
-
 /**
  *This class defines all the attributes of the menu item such as the ID, the item details, and the price
  * @author Sailokesh Mondi, Tanay Somisetty
  */
+
+package com.example.rucafe;
+
 public class MenuItem {
     private double price;
     private int menuItemID;
     private String itemDetails;
     private static int nextMenuItemID = 1;
-    private boolean removed;
 
     /**
      * Default constructor that gets the menuItem ID and increments it
@@ -19,15 +18,6 @@ public class MenuItem {
         this.menuItemID = nextMenuItemID;
         nextMenuItemID++;
         this.price = 0;
-    }
-
-    /**
-     * Constructor that gets the menuID
-     *
-     * @param menuItemID that corresponds to the menu item
-     */
-    public MenuItem(int menuItemID) {
-        this.menuItemID = menuItemID;
     }
 
     /**
@@ -78,16 +68,6 @@ public class MenuItem {
         return this.menuItemID;
     }
 
-
-    /**
-     * Accessory method that gets the details of an item
-     *
-     * @return a string that corresponds to the details of the item
-     */
-    public String getItemDetails() {
-        return this.itemDetails;
-    }
-
     /**
      * Accessory method that sets the details of a menu item to be used in the current controller GUI
      */
@@ -111,23 +91,5 @@ public class MenuItem {
      */
     public double itemPrice() {
         return price;
-    }
-
-    /**
-     * Method to check to see if a menu item has been removed or not
-     *
-     * @return removed instance variable
-     */
-    public boolean isRemoved() {
-        return removed;
-    }
-
-    /**
-     * Accessor method to set the removed variable that can be used in the current order controller
-     *
-     * @param removed instance variable
-     */
-    public void setRemoved(boolean removed) {
-        this.removed = removed;
     }
 }

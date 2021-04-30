@@ -1,15 +1,15 @@
-package com.example.rucafe;
-
-import java.util.ArrayList;
-
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-
 /**
  *This class extends the MenuItem class and implements customizable.
  * It includes specific data and operations pertaining to a coffee object
  * @author Sailokesh Mondi, Tanay Somisetty
  */
+
+package com.example.rucafe;
+
+import java.util.ArrayList;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 public class Coffee extends MenuItem implements Customizable {
     private String size = "";
     private ArrayList addInsList = new ArrayList();
@@ -64,15 +64,6 @@ public class Coffee extends MenuItem implements Customizable {
      */
     public void setSize(String size) {
         this.size = size;
-    }
-
-    /**
-     * Getter method to get the size
-     *
-     * @return String that gets the size of the coffee
-     */
-    public String getSize() {
-        return this.size;
     }
 
     /**

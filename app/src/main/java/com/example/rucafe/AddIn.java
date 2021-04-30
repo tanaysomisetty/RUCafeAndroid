@@ -1,12 +1,13 @@
+/**
+ *This class defines attributes for the add in coffee items such as the type of add in
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
 package com.example.rucafe;
 
 public class AddIn {
     private String type;
 
-    /**
-     *This class defines attributes for the add in coffee items such as the type of add in
-     * @author Sailokesh Mondi, Tanay Somisetty
-     */
         /**
          *Constructor that gets the type of add-in
          * @param type String which corresponds to the type of add-in

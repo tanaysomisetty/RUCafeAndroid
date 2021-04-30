@@ -1,3 +1,8 @@
+/**
+ *The "Activity" class that implements all functionalities pertaining to ordering coffee.
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
 package com.example.rucafe;
 
 import android.view.View;

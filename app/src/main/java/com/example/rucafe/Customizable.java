@@ -1,3 +1,9 @@
+/**
+ *The Customizable interface that abstracts add and remove methods for child classes
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
+
 package com.example.rucafe;
 
 public interface Customizable {

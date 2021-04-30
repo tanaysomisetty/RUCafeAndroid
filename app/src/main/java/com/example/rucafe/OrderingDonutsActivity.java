@@ -1,3 +1,8 @@
+/**
+ * The "Activity" class that implements all functionalities pertaining to ordering donuts.
+ * @author Sailokesh Mondi, Tanay Somisetty
+ */
+
 package com.example.rucafe;
 
 import android.view.View;
@@ -19,6 +24,12 @@ public class OrderingDonutsActivity extends AppCompatActivity implements Adapter
     private RadioGroup donutTypeRadioGrp;
     private RadioButton radioButton;
     private TextView textView;
+    private TextView subtotalTextview;
+    private TextView quantityTextview;
+    private Spinner donutFlavorSpinner;
+
+    private Donut donutOrder;
+    private int donutCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +50,21 @@ public class OrderingDonutsActivity extends AppCompatActivity implements Adapter
         donutTypeRadioGrp = findViewById(R.id.donutTypeRadioGrp);
         textView = findViewById(R.id.text_view_selected);
         setTitle("Order Donuts");
+
+        donutOrder = new Donut();
+        donutOrder.setType("yeast");
+        donutOrder.setFlavor("Glazed");
+        donutOrder.add(donutOrder);
+        donutCount = 1;
+
+        quantityTextview = findViewById(R.id.quantity_text);
+        quantityTextview.setText(Integer.toString(donutCount));
+
+        String price = Double.toString(donutOrder.itemPrice());
+        subtotalTextview = findViewById(R.id.default_subtotal_donut);
+        subtotalTextview.setText(price);
+
+
     }
 
     /**
@@ -160,4 +186,17 @@ public class OrderingDonutsActivity extends AppCompatActivity implements Adapter
         subtotalTextview = findViewById(R.id.default_subtotal_donut);
         subtotalTextview.setText(price);
     }
+
+    /**
+     * Method to reset the fields of the order object and add the donut to the order object
+     * @param v View
+     */
+    public void addToOrderDonut(View v) {
+
+
+        MainActivity.currOrder.add(donutOrder);
+        finish();
+    }
+
+
 }
